@@ -37,8 +37,11 @@
     </div>
     <script>
         function updateDateTime() {
-            const now = new Date();
-            document.getElementById('datetime').innerText = now.toLocaleString();
+            const datetimeEl = document.getElementById('datetime');
+            if (datetimeEl) {
+                const now = new Date();
+                datetimeEl.innerText = now.toLocaleString();
+            }
         }
         setInterval(updateDateTime, 1000);
         updateDateTime();
